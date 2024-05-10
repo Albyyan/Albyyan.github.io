@@ -78,7 +78,7 @@ nav a:hover {
 .content {
     margin-top: 120px; /* Adjust based on your header's height */
     background-color: #000000;
-    min-height: 400px;
+    min-height: 800px;
 }
 .content h1 {
     font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
@@ -223,4 +223,25 @@ footer a:hover {
     transform: translate(-50%, -50%); /* Adjust positioning to truly center */
     color: white; /* Text color */
     text-align: center; /* Align text */
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.profile-image {
+    width: 150px; /* Adjust based on your needs */
+    height: 150px;
+    border-radius: 50%; /* Circular image */
+    right: 10%;
+    margin-right: 100px;
+}
+
+.profile-text p {
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 1.6;
 }

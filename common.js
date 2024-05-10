@@ -40,7 +40,7 @@ function loadFooter() {
     <footer>
         <i>"C'est Fini, Monsieur Antechrist" - Albert Camus</i>
         <br>
-        <i>Have my eMail. I won't check it cuz it's not 1993.</i>
+        <i>Have my Email. I won't check it cuz it's not 1993.</i>
         <button onclick="copyEmail()" style="background-color: black; color: white;">Copy Here</button>
         <br>
         <i>Yes I made this from scratch. How did you tell?</i>
