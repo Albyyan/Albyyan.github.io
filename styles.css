@@ -76,6 +76,7 @@ nav a:hover {
 
 /* Main content styling */
 .content {
+    margin-top: 120px; /* Adjust based on your header's height */
     background-color: #000000;
     min-height: 800px;
 }
