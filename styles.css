@@ -112,6 +112,7 @@ nav a:hover {
 
 .content img {
     max-width: 100%;  /* Ensures the image does not exceed the width of its container */
+    left: 50%;
     height: auto;     /* Maintains the aspect ratio */
 }
 
