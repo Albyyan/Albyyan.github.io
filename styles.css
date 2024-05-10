@@ -1,5 +1,6 @@
 /* General reset to remove default browser styling */
 html, body {
+    caret-color: transparent;
     font-optical-sizing: auto;
     font-style: normal;
     color: rgb(255, 255, 255);
@@ -75,22 +76,38 @@ nav a:hover {
 
 /* Main content styling */
 .content {
-    margin-top: 100px; /* Adjust based on your header's height */
-    padding: 20px;
+    margin-top: 120px; /* Adjust based on your header's height */
     background-color: #000000;
     min-height: 800px;
 }
 .content h1 {
     font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
     color: rgb(255, 0, 0); /* Set the color to red */
+    padding-top: 10px; /* Reduced from 30px for less space above the H1 */
     padding-left: 38px;
     font-size: 50px;
-
+    margin-bottom: 10px; /* Add or reduce as needed to control space between H1 and P */
 }
+
 .content p {
-    font-family: 'Raleway', sans-serif; /* Apply the Kagitingan font */
+    font-family: 'Raleway', sans-serif; /* Apply the Raleway font */
+    color: rgb(255, 255, 255); /* Ensure text is visible */
+    padding-left: 38px;
+    margin-top: 0px; /* Reduce or remove the top margin for less space between text elements */
+}
+
+.content h2 {
+    font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
+    color: rgb(255, 0, 0); /* Set the color to red */
+    padding-left: 38px;
+    font-size: 50px;
+}
+.content big {
+    font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
     color: rgb(255, 255, 255); /* Set the color to red */
     padding-left: 38px;
+    font-size: 150px;
+    text-align: right;
 }
 
 .content img {

@@ -6,9 +6,9 @@ function loadHeader() {
         <nav>
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="./page/graphics.html">NOTES</a></li>
+                <li><a href="./page/notes.html">NOTES</a></li>
                 <li><a href="./page/graphics.html">GRAPHICS</a></li>
-                <li><a href="./page/graphics.html">PROJECTS</a></li>
+                <li><a href="./page/projects.html">PROJECTS</a></li>
             </ul>
         </nav>
     </header>`;
@@ -31,14 +31,7 @@ function loadFooter() {
 function copyEmail() {
     const email = "albert.yan1104@gmail.com";
     if (navigator.clipboard) {
-        navigator.clipboard.writeText(email).then(() => {
-            alert('Email address copied to clipboard!');
-        }, (err) => {
-            console.error('Failed to copy: ', err);
-        });
-    } else {
-        console.error('Clipboard API not available');
-    }
+        navigator.clipboard.writeText(email)}
 }
 
 // Initialize functions on window load
