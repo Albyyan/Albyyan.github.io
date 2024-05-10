@@ -1,0 +1,89 @@
+/* General reset to remove default browser styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Trirong", serif;
+}
+
+/* Header and navigation styling */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;    
+    position: absolute;
+    right: 0; /* Aligns nav to the right side of the header */
+    top: 50%; /* Adjusts vertical positioning - you can tweak this value */
+    transform: translateY(-50%); /* Centers the menu vertically */
+    z-index: 1010;
+}
+
+
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main content styling */
+.content {
+    margin-top: 100px; /* Adjust based on your header's height */
+    padding: 20px;
+    background-color: #000000;
+    min-height: 800px;
+}
+
+/* Paragraph and link styles */
+p {
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    font-family: "Raleway", sans-serif;
+    background-color: #2f2f2f; /* Dark background for the footer */
+    color: white; /* White text color */
+    text-align: center; /* Centers the text within the footer */
+    padding: 20px 0; /* Padding above and below the text */
+}
+
+footer p {
+    margin: 10px 0; /* Adds space between paragraphs if more than one */
+}
+
+footer a {
+    color: #06C; /* Light blue color for links */
+    text-decoration: none; /* No underline */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover for better user experience */
+}
