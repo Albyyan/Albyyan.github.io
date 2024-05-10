@@ -39,11 +39,15 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
+    font-size: 27px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: rgb(108, 0, 0);
+    text-decoration: none;
+
 }
+
 
 
 /* Main content styling */
@@ -52,6 +56,11 @@ nav a:hover {
     padding: 20px;
     background-color: #000000;
     min-height: 800px;
+}
+
+.content img {
+    max-width: 100%;  /* Ensures the image does not exceed the width of its container */
+    height: auto;     /* Maintains the aspect ratio */
 }
 
 /* Paragraph and link styles */
@@ -100,26 +109,24 @@ a:hover {
 
 .text-image-box {
     display: flex;
-    align-items: center; /* Aligns items vertically in the center */
-    justify-content: space-between; /* Spaces children evenly */
-    margin: 20px; /* Adds some margin around the box */
+    align-items: flex-start; /* Aligns items to the start of the flex container */
 }
 
 .text-side {
-    flex: 1; /* Takes up half of the flex container */
-    padding-right: 20px; /* Adds spacing between text and image */
+    flex: 3;  /* Gives the text side more space relative to the image side */
+    padding-right: 20px;  /* Adds spacing between text and image */
 }
 
 .image-side {
-    flex: 1; /* Takes up the other half of the flex container */
-    display: flex;
-    justify-content: flex-end; /* Aligns the image to the right */
+    flex: 2;  /* Allocates less space to the image side */
 }
 
 .image-side img {
-    max-width: 100%; /* Ensures the image is responsive */
-    height: auto; /* Maintains aspect ratio */
+    padding-top: 50px;  /* Adds spacing between text and image */
+    width: 100%;  /* Ensures the image is responsive */
+    height: auto;  /* Maintains aspect ratio */
 }
+
 
 /* Footer styling */
 footer {

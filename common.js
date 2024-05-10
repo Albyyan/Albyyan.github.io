@@ -19,7 +19,7 @@ function loadHeader() {
 function loadFooter() {
     const footerHTML = `
     <footer>
-        <i>C'est Fini, Monsieur Antechrist - Albert Camuss</i>
+        <i>"C'est Fini, Monsieur Antechrist" - Albert Camus</i>
         <br>
         <i><a href="mailto:albert.yan1104@gmail.com">Leave me an email.</a> I won't check it cuz it's not 1993</a>
     </footer>`;
