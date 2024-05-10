@@ -19,8 +19,9 @@ function loadHeader() {
 function loadFooter() {
     const footerHTML = `
     <footer>
-        <p>C'est Fini, Monsieur Antechrist!</p>
-        <p>Contact us at <a href="mailto:albert.yan1104@gmail.com">albert.yan1104@gmail.com</a>.</p>
+        <i>C'est Fini, Monsieur Antechrist - Albert Camuss</i>
+        <br>
+        <i><a href="mailto:albert.yan1104@gmail.com">Leave me an email.</a> I won't check it cuz it's not 1993</a>
     </footer>`;
     document.getElementById('footer').innerHTML = footerHTML;
 }
