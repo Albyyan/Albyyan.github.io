@@ -1,4 +1,3 @@
-// Load Header
 function loadHeader() {
     const headerHTML = `
     <header>
@@ -13,7 +12,27 @@ function loadHeader() {
         </nav>
     </header>`;
     document.getElementById('header').innerHTML = headerHTML;
+
+    // Wait for images to load before adjusting content margin
+    const headerImage = document.querySelector('header img');
+    headerImage.onload = adjustContentMargin;
 }
+
+// Adjust Content Margin
+function adjustContentMargin() {
+    const header = document.querySelector('header');
+    const content = document.querySelector('.content');
+    if (header && content) {
+        const headerHeight = header.offsetHeight;
+        content.style.marginTop = `${headerHeight}px`;
+    }
+}
+
+// Initialize functions
+window.onload = function() {
+    loadHeader();
+    loadFooter();
+};
 
 // Load Footer
 function loadFooter() {
@@ -31,11 +50,7 @@ function loadFooter() {
 function copyEmail() {
     const email = "albert.yan1104@gmail.com";
     if (navigator.clipboard) {
-        navigator.clipboard.writeText(email)}
+        navigator.clipboard.writeText(email);
+    }
 }
 
-// Initialize functions on window load
-window.onload = function() {
-    loadHeader();
-    loadFooter();
-};

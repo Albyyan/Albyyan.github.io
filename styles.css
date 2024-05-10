@@ -1,7 +1,7 @@
 /* General reset to remove default browser styling */
 html, body {
     caret-color: transparent;
-    font-optical-sizing: auto;
+    font-optical-sizing: auto;  
     font-style: normal;
     color: rgb(255, 255, 255);
     font-family: "Raleway", sans-serif;
@@ -76,7 +76,6 @@ nav a:hover {
 
 /* Main content styling */
 .content {
-    margin-top: 120px; /* Adjust based on your header's height */
     background-color: #000000;
     min-height: 800px;
 }
@@ -203,4 +202,3 @@ footer a {
 footer a:hover {
     text-decoration: underline; /* Underline on hover for better user experience */
 }
-
