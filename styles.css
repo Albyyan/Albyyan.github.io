@@ -1,13 +1,36 @@
 /* General reset to remove default browser styling */
 html, body {
     font-optical-sizing: auto;
-    font-style: normal;  
+    font-style: normal;
     color: rgb(255, 255, 255);
     font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto; /* Explicitly allowing vertical scrolling only */
 }
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(20vh); /* Reduced initial translation to minimize layout shift */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@font-face {
+    font-family: 'Kagitingan';
+    src: url('font/kagitingan-bold.otf') format('opentype');
+}
+
+@keyframes flickerAnimation {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+
 
 /* Header and navigation styling */
 header {
@@ -17,7 +40,7 @@ header {
 }
 
 nav {
-    font-family: "Raleway", sans-serif;
+    font-family: "Kagitingan", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;    
     position: absolute;
@@ -57,6 +80,18 @@ nav a:hover {
     background-color: #000000;
     min-height: 800px;
 }
+.content h1 {
+    font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
+    color: rgb(255, 0, 0); /* Set the color to red */
+    padding-left: 38px;
+    font-size: 50px;
+
+}
+.content p {
+    font-family: 'Raleway', sans-serif; /* Apply the Kagitingan font */
+    color: rgb(255, 255, 255); /* Set the color to red */
+    padding-left: 38px;
+}
 
 .content img {
     max-width: 100%;  /* Ensures the image does not exceed the width of its container */
@@ -80,27 +115,29 @@ a:hover {
 
 .gallery {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap onto the next line */
-    justify-content: space-between; /* Distributes space between and around content items */
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 20px;
+    animation: slideInFromBottom 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20vh); /* Starting slightly below to minimize impact */
 }
 
 .item {
-    flex: 1 0 22%; /* flex-grow, flex-shrink, flex-basis */
+    flex: 1 0 22%;
     margin: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
-    text-align: center; /* Centers text and images */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .item a {
-    display: block; /* Makes the entire area clickable */
-    text-decoration: none; /* Removes underline from links */
-    color: rgb(255, 255, 255); /* Sets text color */
+    display: block;
+    color: rgb(255, 255, 255);
 }
 
 .item img {
-    width: 100%; /* Makes images responsive */
-    height: auto; /* Maintains aspect ratio */
+    width: 100%;
+    height: auto;
 }
 
 .item p {

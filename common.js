@@ -6,9 +6,9 @@ function loadHeader() {
         <nav>
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="./page/graphics.html">BLOG</a></li>
-                <li><a href="./page/graphics.html">GRAPHICS</a></li>
                 <li><a href="./page/graphics.html">NOTES</a></li>
+                <li><a href="./page/graphics.html">GRAPHICS</a></li>
+                <li><a href="./page/graphics.html">PROJECTS</a></li>
             </ul>
         </nav>
     </header>`;
@@ -21,12 +21,27 @@ function loadFooter() {
     <footer>
         <i>"C'est Fini, Monsieur Antechrist" - Albert Camus</i>
         <br>
-        <i><a href="mailto:albert.yan1104@gmail.com">Leave me an email.</a> I won't check it cuz it's not 1993</a>
+        <i>Leave me an email (I won't check it cuz it's not 1993).</i>
+        <button onclick="copyEmail()">Copy Here</button>
     </footer>`;
     document.getElementById('footer').innerHTML = footerHTML;
 }
 
-// Call the functions on window load
+// Copy Email Function
+function copyEmail() {
+    const email = "albert.yan1104@gmail.com";
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).then(() => {
+            alert('Email address copied to clipboard!');
+        }, (err) => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        console.error('Clipboard API not available');
+    }
+}
+
+// Initialize functions on window load
 window.onload = function() {
     loadHeader();
     loadFooter();
