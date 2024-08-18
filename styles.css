@@ -1,4 +1,4 @@
-/* General reset to remove default browser styling */
+/* General Reset */
 html, body {
     caret-color: transparent;
     font-optical-sizing: auto;  
@@ -8,240 +8,176 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: auto; /* Explicitly allowing vertical scrolling only */
-}
-@keyframes slideInFromBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(20vh); /* Reduced initial translation to minimize layout shift */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    overflow-y: auto;
+    background-color: #0c0202; /* Dark background for the entire page */
+    height: 100%; /* Ensure body takes full height */
 }
 
-@font-face {
-    font-family: 'Kagitingan';
-    src: url('font/kagitingan-bold.otf') format('opentype');
-}
-
-@keyframes flickerAnimation {
-    0%   { opacity: 1; }
-    50%  { opacity: 0.5; }
-    100% { opacity: 1; }
-  }
-
-
-/* Header and navigation styling */
+/* Header styles */
 header {
     position: fixed;
     width: 100%;
     z-index: 1000;
+    background-color: #220505; /* Darker header background */
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    color: #ff1e1e; /* Red color for the logo */
+    font-size: 30px;
+    margin-right: 40px;
 }
 
 nav {
-    font-family: "Kagitingan", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;    
-    position: absolute;
-    right: 0; /* Aligns nav to the right side of the header */
-    top: 50%; /* Adjusts vertical positioning - you can tweak this value */
-    transform: translateY(-50%); /* Centers the menu vertically */
-    z-index: 1010;
+    font-family: 'Montserrat';
+    display: flex;
+    align-items: center;
 }
 
-
-
-nav li {
-    display: inline;
-    margin-right: 20px;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
-    color: rgb(255, 0, 0);
+    color: #c5c6c7;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
-    font-size: 27px;
+    font-size: 18px;
+    position: relative;
 }
 
-nav a:hover {
-    color: rgb(108, 0, 0);
-    text-decoration: none;
-
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff1e1e; /* Red color for underline */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
 }
 
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
-
-/* Main content styling */
+/* Adjusted Content Styles */
 .content {
-    margin-top: 120px; /* Adjust based on your header's height */
-    background-color: #000000;
-    min-height: 800px;
-}
-.content h1 {
-    font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
-    color: rgb(255, 0, 0); /* Set the color to red */
-    padding-top: 10px; /* Reduced from 30px for less space above the H1 */
-    padding-left: 38px;
-    font-size: 50px;
-    margin-bottom: 10px; /* Add or reduce as needed to control space between H1 and P */
-}
-
-.content p {
-    font-family: 'Raleway', sans-serif; /* Apply the Raleway font */
-    color: rgb(255, 255, 255); /* Ensure text is visible */
-    padding-left: 38px;
-    margin-top: 0px; /* Reduce or remove the top margin for less space between text elements */
-}
-
-.content h2 {
-    font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
-    color: rgb(255, 0, 0); /* Set the color to red */
-    padding-left: 38px;
-    font-size: 50px;
-}
-.content big {
-    font-family: 'Kagitingan', sans-serif; /* Apply the Kagitingan font */
-    color: rgb(255, 255, 255); /* Set the color to red */
-    padding-left: 38px;
-    font-size: 150px;
-    text-align: right;
-}
-
-.content img {
-    max-width: 100%;  /* Ensures the image does not exceed the width of its container */
-    left: 50%;
-    height: auto;     /* Maintains the aspect ratio */
-}
-
-/* Paragraph and link styles */
-p {
-    color: #ffffff;
-    line-height: 1.6;
-}
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     padding: 20px;
-    animation: slideInFromBottom 1s ease-out forwards;
+    padding-top: 100px; /* Add padding to prevent content from being covered by the fixed header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px); /* Adjusted to reduce space between header and content */
+}
+
+.text-section {
+    text-align: left;
+}
+
+h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 150px;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+h1 span {
+    color: #ff1e1e; /* Red color for highlighted text */
+}
+
+.caret {
+    display: inline-block;
+    background-color: #ffffff; /* White color for the caret */
+    width: 0.1em;
+    height: 1em;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+p {
+    font-size: 20px;
+    color: #c5c6c7;
+    margin-bottom: 20px;
+}
+
+/* Fade-in animation */
+.fade-in {
     opacity: 0;
-    transform: translateY(20vh); /* Starting slightly below to minimize impact */
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.fade-in.delay-1 {
+    font-size: 50px;
+    animation-delay: 1s;
+}   
+
+.fade-in.delay-2 {
+    font-size: 50px;
+    animation-delay: 2s;
+}
+
+/* Gallery Styles */
+.gallery {
+    padding-top: 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .item {
-    flex: 1 0 22%;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-}
-
-.item a {
-    display: block;
-    color: rgb(255, 255, 255);
 }
 
 .item img {
     width: 100%;
-    height: auto;
+    height: 500px;
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-.item p {
-    margin-top: 8px; /* Space between image and text */
+.item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-.text-image-box {
-    display: flex;
-    align-items: flex-start; /* Aligns items to the start of the flex container */
+.item i {
+    font-family: 'Raleway', sans-serif;
+    color: #c5c6c7;
+    margin-top: 10px;
+    font-size: 16px;
 }
 
-.text-side {
-    flex: 3;  /* Gives the text side more space relative to the image side */
-    padding-right: 20px;  /* Adds spacing between text and image */
+/* Keyframes for animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.image-side {
-    flex: 2;  /* Allocates less space to the image side */
-}
-
-.image-side img {
-    padding-top: 50px;  /* Adds spacing between text and image */
-    width: 100%;  /* Ensures the image is responsive */
-    height: auto;  /* Maintains aspect ratio */
-}
-
-
-/* Footer styling */
-footer {
-    font-family: "Raleway", sans-serif;
-    background-color: #2f2f2f; /* Dark background for the footer */
-    color: white; /* White text color */
-    text-align: center; /* Centers the text within the footer */
-    padding: 20px 0; /* Padding above and below the text */
-}
-
-footer p {
-    margin: 10px 0; /* Adds space between paragraphs if more than one */
-}
-
-footer a {
-    color: #06C; /* Light blue color for links */
-    text-decoration: none; /* No underline */
-}
-
-footer a:hover {
-    text-decoration: underline; /* Underline on hover for better user experience */
-}
-
-.parallax {
-    /* This is the part of your CSS that creates the parallax effect */
-    background-image: url(images/brutalism.jpg);
-    height: 500px; /* Set to the desired height */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; /* Ensure positioning context for the overlay */
-  }
-
-  .text-overlay {
-    position: absolute; /* Position relative to the nearest positioned ancestor (parallax div) */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust positioning to truly center */
-    color: white; /* Text color */
-    text-align: center; /* Align text */
-}
-
-.profile-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 70px;
-}
-
-.profile-image {
-    width: 150px; /* Adjust based on your needs */
-    height: 150px;
-    border-radius: 50%; /* Circular image */
-    right: 10%;
-    margin-right: 100px;
-}
-
-.profile-text p {
-    font-size: 30px;
-    color: #ffffff;
-    line-height: 1.6;
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }

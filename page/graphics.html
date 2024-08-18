@@ -4,7 +4,7 @@
     <base href="../">  <!-- Sets the base URL to the parent directory -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website Title</title>
@@ -12,36 +12,52 @@
     <script src="common.js"></script>
 </head>
 <body>
-    <div id="header"></div>  <!-- Placeholder for the header -->
+    <header>
+        <div class="logo">Your Logo</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page/notes.html">Notes</a></li>
+                <li><a href="page/graphics.html">Graphics</a></li>
+                <li><a href="page/projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="content">
-        <h1>Graphics</h1>
-        <div class="gallery">
-            <div class="item">
-                <a href="page/poster-site/the-background.html">
-                    <img src="images/poster/the-background.jpg" alt="Image Description">
-                    <i>The Background <br> Third Eye Blind (1997)</i>
-                </a>
-            </div>
-            <div class="item">
-                <a href="http://example.com/link2">
-                    <img src="images/poster/motorcycle-drive-by.jpg" alt="Image Description">
-                    <i>Motorcycle Drive By <br> Third Eye Blind (1997)</i>
-                </a>
-            </div>
-            <div class="item">
-                <a href="http://example.com/link3">
-                    <img src="images/poster/god-of-wine.jpg" alt="Image Description">
-                    <i>God of Wine <br> Third Eye Blind (1997)</i>
-                </a>
-            </div>
-            <div class="item">
-                <a href="http://example.com/link4">
-                    <img src="images/poster/funny-little-frog.jpg" alt="Image Description">
-                    <i>Funny Little Frog <br> Belle & Sebastian (2007)</i>
-                </a>
+        <div class="text-section">
+            <h1 class="fade-in">Graphics</h1>
+            <div class="gallery fade-in delay-1">
+                <div class="item">
+                    <a href="page/poster-site/the-background.html">
+                        <img src="images/poster/the-background.jpg" alt="The Background - Third Eye Blind">
+                        <i>The Background <br> Third Eye Blind (1997)</i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://example.com/link2">
+                        <img src="images/poster/motorcycle-drive-by.jpg" alt="Motorcycle Drive By - Third Eye Blind">
+                        <i>Motorcycle Drive By <br> Third Eye Blind (1997)</i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://example.com/link3">
+                        <img src="images/poster/god-of-wine.jpg" alt="God of Wine - Third Eye Blind">
+                        <i>God of Wine <br> Third Eye Blind (1997)</i>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://example.com/link4">
+                        <img src="images/poster/funny-little-frog.jpg" alt="Funny Little Frog - Belle & Sebastian">
+                        <i>Funny Little Frog <br> Belle & Sebastian (2007)</i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <div id="footer"></div>  <!-- Placeholder for the footer -->
+
+    <footer id="footer">
+        <!-- Footer content goes here -->
+    </footer>
 </body>
 </html>
