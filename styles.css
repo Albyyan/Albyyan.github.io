@@ -1,3 +1,4 @@
+
 /* General Reset */
 html, body {
     caret-color: transparent;
@@ -9,8 +10,8 @@ html, body {
     padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #0c0202;
-    height: 100%;
+    background-color: #0c0202; /* Dark background for the entire page */
+    height: 100%; /* Ensure body takes full height */
 }
 
 /* Header styles */
@@ -18,21 +19,23 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background-color: #220505;
-    padding: 10px 20px;
+    background-color: #220505; /* Darker header background */
+    padding: 20px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .logo {
     font-family: 'Montserrat', sans-serif;
-    color: #ff1e1e;
-    font-size: 24px;
+    color: #ff1e1e; /* Red color for the logo */
+    font-size: 30px;
+    margin-right: 40px;
 }
 
 nav {
     font-family: 'Montserrat';
+    display: flex;
+    align-items: center;
 }
 
 nav ul {
@@ -40,15 +43,15 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 nav a {
     color: #c5c6c7;
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 12px;
-    font-size: 16px;
+    padding: 10px 15px;
+    font-size: 18px;
     position: relative;
 }
 
@@ -57,7 +60,7 @@ nav a::after {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #ff1e1e;
+    background-color: #ff1e1e; /* Red color for underline */
     bottom: 0;
     left: 0;
     transform: scaleX(0);
@@ -70,66 +73,56 @@ nav a:hover::after {
     transform-origin: bottom left;
 }
 
-/* Content Styles */
+/* Adjusted Content Styles */
 .content {
     padding: 20px;
-    padding-top: 80px;
+    padding-top: 80px; /* Offset the height of the fixed header */
+    display: flex;
+    align-items: flex-start; /* Align content to the top of the available space */
+    justify-content: center;
+}
+
+.title-section {
+    text-align: left;
+}
+/* Adjusted Text Section */
+.text-section {
+    text-align: left; /* Keep text alignment left */
+    margin: 0 auto; /* Center the text section horizontally */
+    max-width: 800px; /* Set a max-width for the content box */
+    width: 100%; /* Ensure the text section takes up the full width within its parent */
+    padding-top: 20px; /* Add a small top padding if necessary */
+}
+
+.project-section {
     text-align: center;
 }
 
-.title-section h1 {
+h1 {
     font-family: "Raleway", sans-serif;
-    font-size: 40px;
+    font-size: 9vw;
     color: #fff;
     margin-bottom: 10px;
+    position: relative;
 }
 
-.title-section h1 span {
-    color: #ff1e1e;
+h1 span {
+    color: #ff1e1e; /* Red color for highlighted text */
 }
 
 .caret {
     display: inline-block;
-    background-color: #ffffff;
+    background-color: #ffffff; /* White color for the caret */
     width: 0.1em;
-    height: 1em;
+    height: 9vw;
     margin-left: 5px;
     animation: blink 1s infinite;
 }
 
-.title-section p {
-    font-size: 18px;
+p {
+    font-size: 20px;
     color: #c5c6c7;
-    margin-bottom: 10px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-
-    nav a {
-        font-size: 14px;
-    }
-
-    .content {
-        padding-top: 60px;
-    }
-
-    .title-section h1 {
-        font-size: 32px;
-    }
-
-    .title-section p {
-        font-size: 16px;
-    }
+    margin-bottom: 20px;
 }
 
 /* Fade-in animation */
@@ -139,11 +132,46 @@ nav a:hover::after {
 }
 
 .fade-in.delay-1 {
+    font-size: 4vw;
     animation-delay: 1s;
 }   
 
 .fade-in.delay-2 {
+    font-size: 3vw;
     animation-delay: 2s;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.item i {
+    font-family: 'Raleway', sans-serif;
+    color: #c5c6c7;
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 /* Keyframes for animations */
@@ -164,3 +192,28 @@ nav a:hover::after {
         opacity: 0;
     }
 }
+.notes-section {
+    margin-bottom: 30px;
+}
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.topics span {
+    background-color: #220505;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.topics span:hover {
+    background-color: #ff1e1e;
+}
+
+.fade-in.delay-5 {
+    animation-delay: 0.2s;
+}   
